@@ -19,7 +19,7 @@ public class CopyFileStrategy3 implements CopyFileStrategy{
     public void copyFile(String s, String s1) throws FileAlreadyPresentsException, FileCopyFailedException {
 
             if (!new File(s1).exists()) {
-                throw new FileAlreadyPresentsException("File don't already present");
+                throw new FileAlreadyPresentsException("Error: File is already presented");
             }
             try (FileChannel in = new FileInputStream(s).getChannel();
                  FileChannel out = new FileOutputStream(s1).getChannel()) {
