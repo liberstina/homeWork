@@ -17,16 +17,16 @@ public class CopyFileStrategy4 implements CopyFileStrategy{
     @Override
     public void copyFile(String s, String s1) throws FileAlreadyPresentsException, FileCopyFailedException {
         if (!new File(s1).exists()) {
-            throw new FileAlreadyPresentsException("File don't already present");
+            throw new FileAlreadyPresentsException("Error: File is already presented");
         }
         try {
             Path pathSource = Paths.get(s);
             Path pathDestination = Paths.get(s1);
             Files.copy(pathSource, pathDestination);
         } catch (IOException e) {
-            System.err.println("errors");
+
             e.printStackTrace();
-            throw new FileCopyFailedException(" Copy failed exception");
+            throw new FileCopyFailedException("Error: Copying file is failed");
         }
 
     }
