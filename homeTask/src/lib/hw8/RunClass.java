@@ -46,13 +46,13 @@ destination data files
       System.out.println("Elapsed Time for Simple copying is " + (elapsedTimeSimple / 1000000000000.0) + " sec");
 
       //BuffCopy with timesheet
-     long startTimeBuff = System.nanoTime();
+      long startTimeBuff = System.nanoTime();
       copyFF.createBufferedCopyFileStrategy().copyFile(pathMain, pathBuff);
       long elapsedTimeBuff = System.nanoTime() - startTimeBuff;
       System.out.println("Elapsed Time for Buffered copying is " + (elapsedTimeBuff / 1000000000000.0) + " sec");
 
       //Channel with timesheet
-       long startTimeChann = System.nanoTime();
+      long startTimeChann = System.nanoTime();
       copyFF.createChannelsCopyFileStrategy().copyFile(pathMain, pathChann);
       long elapsedTimeChann = System.nanoTime() - startTimeChann;
       System.out.println("Elapsed Time for CopyFile copying is " + (elapsedTimeChann / 1000000000000.0) + " sec");
