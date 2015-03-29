@@ -9,11 +9,11 @@ import java.io.*;
 /**
  * Created by Liberstina on 27.03.2015.
  */
-public class CopyFileStrategy2 implements CopyFileStrategy {
+public class CopyFileStrategyBuff implements CopyFileStrategy {
 
     @Override
     public void copyFile(String s, String s1) throws FileAlreadyPresentsException, FileCopyFailedException {
-        if (!new File(s1).exists()) {
+        if (new File(s1).exists()) {
             throw new FileAlreadyPresentsException("Error: File is already presented");
         }
         try (BufferedInputStream bufIn = new BufferedInputStream(new FileInputStream(s));
